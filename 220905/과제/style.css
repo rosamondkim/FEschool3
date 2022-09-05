@@ -1,0 +1,59 @@
+/* reset */
+h1{
+    font-size: initial;
+    font-weight: initial;
+    padding: 0;
+}
+a{
+    color:initial;
+    text-decoration: none;   
+}
+ul{
+    list-style: none;
+}
+
+/*component*/
+body{
+    color: #3A2A21;
+}
+/* header */
+header{
+    display: flex;
+    padding:38px 348px 39px 347px;
+}
+header h1{
+    font-size:24px;
+    font-weight: 700;
+    /*글씨체 적용하기*/
+    line-height: 28px;
+}
+.header__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__list li{
+    padding: 0 40px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.header__search{
+    font-size: 24.67px;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+}
+
+/* main */
+.introduce{
+    background-color: #FFCF5C;
+    display: flex;
+}
+
+.introduce-title{
+    font-weight: 800;
+    font-size:100px;
+    line-height: 100px;
+    text-transform: uppercase;
+}
