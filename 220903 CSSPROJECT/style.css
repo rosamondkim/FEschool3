@@ -1,0 +1,35 @@
+/*reset*/
+h1,p{
+    padding: 0;
+    margin: 0;
+}
+img{
+    vertical-align: top;
+}
+body{
+    background-image: url(images/bg.png);
+    background-size: cover;
+
+}
+.wrapper{
+    margin: 0 auto;
+    width: 300px;
+    color:white;
+}
+.image img {
+    display: block;
+}
+.contents {
+    padding: 20px;
+    background-color: #93572E;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px #4A260B;
+    box-sizing: border-box;
+}
+.contents h1{
+    font-weight: 900;
+}
+.contents p{
+    line-height: 140%;
+    opacity: 50%;
+}
