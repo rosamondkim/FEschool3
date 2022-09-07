@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* index.html */
+            .cont {
+                display: inline-block;
+                position: relative;
+                top: 117px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .cont .tit {
+                font-weight: 900;
+                font-size: 24px;
+                line-height: 28px;
+                color: #f2994a;
+                margin-bottom: 30px;
+            }
+
+            /* 영상 배경 스타일 */
+            .video-background {
+                background: #000;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -99;
+            }
+            .video-foreground,
+            .video-background iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 크롬에서 음소거를 해주지않으면 자동재생 안됨 따라서 꼭 mute=1을 넣어주어야 함, 반복 제생은 loop=1 -->
+        <div class="video-background">
+            <div class="video-foreground">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/c1mzlGjb0gQ?showinfo=0&rel=0&autoplay=1&mute=1&loop=1&controls=0;playlist=c1mzlGjb0gQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>inline</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500&family=Lora:ital,wght@1,500&family=Oswald:wght@500&display=swap" rel="stylesheet">
+		<style>
+			body, h1 {
+				margin: 0;
+			}
+            ::selection {
+                background-color: transparent;
+            }
+			body {
+				background-color: #ddd;
+			}
+			.wrapper {
+				background-color: #eee;
+				margin: 100px auto;
+				width: 600px;
+				padding: 40px;
+			}
+			.title {
+                cursor: pointer;
+                font-size: 100px;
+			}
+            .title.active {
+				background-color: white;
+            }
+			.title.type_b { font-family: 'Lora', serif; }
+		</style>
+    </head>
+    <body>
+
+		<div class="wrapper">
+			<h1 class="title type_b">Headline</h1>
+		</div>	
+
+        <script>
+            document.querySelector(".title").addEventListener('click', function handleClick(e) {
+                e.target.classList.toggle("active");
+            }); 
+        </script>
+    </body>
+</html>
