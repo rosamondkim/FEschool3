@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+
+:root{
+    --purple: #5B2386;
+}
+
+body{
+    font-family: 'GmarketSansMedium';
+    box-sizing: border-box;
+    background-color: var(--purple);
+}
+#app{
+    width: 765px;
+    padding-top:125px;
+    margin: 0 auto;
+    text-align: center;
+}
+.tit-timelaw{
+    position: relative;
+}
+.tit-timelaw img:first-child{
+    width: 564px;
+    height: 112px;
+}
+.tit-timelaw img:last-child{
+    width: 261px;
+    height: 265px;
+    position: absolute;
+    top:-70px;
+    right: 250px;
+    z-index: -1;
+} 
+.img-txt{
+    font-size: 36px;
+    margin: 78px;
+}
+.tit-content{
+    position: inherit;
+}
+.txt-desc{
+    font-size: 18px;
+    color: #ffffff;
+}
+.tit-desc{
+    font-size: 24px;
+    font-family: 'GmarketSansBold';
+    margin-bottom:102px;
+}
+.img-quotes{
+    position: absolute;
+
+}
