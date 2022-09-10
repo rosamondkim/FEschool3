@@ -27,9 +27,11 @@
     url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
     url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
 }
-
+/* 변수 지정 */
 :root{
     --purple: #5B2386;
+    --white: #FFFFFF;
+    --yellow: #FCEE21;
 }
 
 body{
@@ -37,19 +39,23 @@ body{
     box-sizing: border-box;
     background-color: var(--purple);
 }
+/* main */
 #app{
-    width: 765px;
+    width: 780px;
     padding-top:125px;
     margin: 0 auto;
     text-align: center;
 }
+/* 1만시간의 법칙 로고+시계이미지 */
 .tit-timelaw{
     position: relative;
 }
+/*  로고 */
 .tit-timelaw img:first-child{
     width: 564px;
     height: 112px;
 }
+/* 시계이미지 */
 .tit-timelaw img:last-child{
     width: 261px;
     height: 265px;
@@ -58,23 +64,178 @@ body{
     right: 250px;
     z-index: -1;
 } 
+/* 연습은 어제의 당신보다~ */
 .img-txt{
     font-size: 36px;
     margin: 78px;
 }
+/* 1만시간의 법칙 설명+따옴표 */
 .tit-content{
-    position: inherit;
+    position: relative;
+    margin-bottom: 102px;
 }
+/* 1만시간의 법칙 설명 */
 .txt-desc{
+    line-height: 30px;
     font-size: 18px;
-    color: #ffffff;
+    color: var(--white);
 }
+/* bold 표시부분 */
 .tit-desc{
     font-size: 24px;
     font-family: 'GmarketSansBold';
-    margin-bottom:102px;
 }
+/* 따옴표 */
 .img-quotes{
     position: absolute;
-
+    top: 10px;
+    right: 150px;
 }
+/* 첫번째 폼 */
+.cont-inp{
+    position: relative;
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 38px;
+}
+/* 첫번째 폼 첫줄 */
+.txt-wannabe{
+    padding-bottom: 38px;
+}
+/* 첫번째 폼 input 부분 */
+.cont-inp input{
+    text-align: center;
+    padding: 0 17px;
+    width: 228px;
+    height: 57px;
+    border-radius: 7px;
+    font-size:24px;
+    font-family: 'GmarketSansMedium';
+}
+/* 첫번째 폼 버튼 */
+.btn-exc{
+    background-color: var(--yellow);
+    color: var(--purple);
+    border-radius: 56px;
+    width: 565px;
+    height: 66px;
+    padding: 21px 49px;
+    font-size: 24px;
+    font-family: 'GmarketSansBold';
+    margin: 115px 0 147px 0;
+}
+/* 커서 아이콘 */
+.cont-cursor{
+    position: absolute;
+    bottom: 130px;
+    right: 40px;
+}
+/* 안보이게하기 */
+.blind{
+    display: none;
+}
+/* 결과 */
+.cont-result{
+    text-align: center;
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 17px;
+}
+/* 결과 p태그 */
+.cont-result p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 결과 P태그 내 strong 태그 */
+.cont-result strong{
+    font-size:72px;
+    font-family: 'GmarketSansBold';
+    margin: 0 12px;
+}
+/* 결과 버튼 2개 div */
+.result-btn{
+    margin: 127px 0 136.36px 0;
+}
+/* 결과 */
+.result-btn button{
+    font-family: 'GmarketSansBold';
+    color: var(--purple);
+    border-radius: 56px;
+    font-size:24px;
+}
+/* 훈련하러가기 버튼 */
+.btn-go{
+    background-color: var(--yellow);
+    width: 356px;
+    height: 66px;
+    margin-right: 18px;
+}
+/* 공유하기버튼 */
+.btn-share{
+    background-color: var(--white);
+    width: 191px;
+    height: 66px;
+}
+/* footer */
+.cont-footer{
+    text-align: center;
+    margin: 0 auto;
+    color: var(--white);
+    font-family: 'Noto Sans KR';
+}
+/* footer의 이미지 */
+.cont-footer img{
+    width: 125px;
+    height: 25px;
+    margin-bottom: 20px;
+}
+/* footer의 p태그 */
+.txt-footer{
+    line-height: 17px;
+    font-size: 12px;
+    margin-bottom: 100px;
+}
+/* 화이팅 모달창 */
+.cont-modal{
+    text-align: center;
+    margin: 0 auto;
+    padding: 1px;
+    width: 947px;
+    background-color: var(--white);
+    border-radius: 20px;
+    /* box-shadow: 모르겠다 */    
+}
+/* 모달창의 모든 이미지 선택 */
+.cont-modal img{
+    display: block;
+    margin: 0 auto;
+}
+/* 모달창 내 타이틀 이미지 */
+.modal-title{
+    padding: 70px 0 20px 0;
+    font-size: 96px;
+    margin: 40px 0;
+}
+/* 모달창 내 서브타이틀 이미지 */
+.modal-subtitle{
+    font-size:36px;
+}
+/* 라이캣 */
+.modal-lion{
+    width: 433px;
+    height: 337px;
+    padding: 75px 0;
+}
+.btn-go{
+    width: 508px;
+    height: 66px;
+    border-radius: 56px;
+    background-color: var(--yellow);
+    color: var(--purple);
+    font-size: 24px;
+    font-family: 'GmarketSansBold';
+    margin-bottom: 100px ;
+}
+/* 모달창의 문제가 있다. */
+

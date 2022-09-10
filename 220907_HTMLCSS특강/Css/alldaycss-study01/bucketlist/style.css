@@ -1,0 +1,46 @@
+h1{
+    padding:initial;
+    margin:initial;
+}
+h1{
+    font-weight: initial;
+    font-size: initial;
+}
+body{
+    background-color: #DDDDDD;
+}
+.wrapper{
+    background-color: #FFFFFF;
+    width: 300px;
+    margin: 100px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px 0px #AAAAAA;
+}
+.header{
+    margin: 25px 0;
+}
+h1{
+    color:#FF2F9D;
+    font-weight: 900;
+    font-size: large;
+    border-left: 7px solid;
+    padding-left: 15px;
+}
+.list{
+    background-color: #EFEFEF;
+    padding: 15px;
+    border-top: 3px solid #DDDDDD;
+}
+.list-content{
+    background-color: #FFFFFF;
+    padding: 7px 7px 7px 10px;
+    margin: 10px;
+    border: 3px solid #AAAAAA;
+    border-radius: 5px;
+    font-size: small;
+}
+.clicked{
+    border: 3px solid #1E91FF;
+    color: #1E91FF;
+}
