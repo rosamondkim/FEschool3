@@ -1,8 +1,6 @@
 h1{
     padding:initial;
     margin:initial;
-}
-h1{
     font-weight: initial;
     font-size: initial;
 }
@@ -10,14 +8,17 @@ body{
     background-color: #DDDDDD;
 }
 .wrapper{
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     width: 300px;
-    margin: 100px auto;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 100px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 1px 1px 10px 0px #AAAAAA;
 }
 .header{
+    background-color: inherit;
     margin: 25px 0;
 }
 h1{
@@ -39,6 +40,7 @@ h1{
     border: 3px solid #AAAAAA;
     border-radius: 5px;
     font-size: small;
+    cursor: pointer;
 }
 .clicked{
     border: 3px solid #1E91FF;

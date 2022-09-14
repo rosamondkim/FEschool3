@@ -82,6 +82,7 @@ body{
 }
 /* bold 표시부분 */
 .tit-desc{
+    vertical-align: middle;
     font-size: 24px;
     font-family: 'GmarketSansBold';
 }
@@ -141,15 +142,10 @@ body{
     font-size: 24px;
     margin-bottom: 17px;
 }
-/* 결과 p태그 */
-.cont-result p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 /* 결과 P태그 내 strong 태그 */
 .cont-result strong{
     font-size:72px;
+    vertical-align: middle;
     font-family: 'GmarketSansBold';
     margin: 0 12px;
 }
@@ -200,32 +196,32 @@ body{
 .cont-modal{
     text-align: center;
     margin: 0 auto;
-    padding: 1px;
+    display: flow-root;
     width: 947px;
     background-color: var(--white);
     border-radius: 20px;
-    /* box-shadow: 모르겠다 */    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);    
 }
 /* 모달창의 모든 이미지 선택 */
 .cont-modal img{
     display: block;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 /* 모달창 내 타이틀 이미지 */
 .modal-title{
-    padding: 70px 0 20px 0;
+    padding: 70px 0 40px 0;
     font-size: 96px;
-    margin: 40px 0;
+    /* 여기 왜 margin이 안들어가는거지? */
 }
 /* 모달창 내 서브타이틀 이미지 */
 .modal-subtitle{
-    font-size:36px;
+    font-size: 36px;
 }
 /* 라이캣 */
 .modal-lion{
     width: 433px;
     height: 337px;
-    padding: 75px 0;
+    padding: 29px 0 74px 0;
 }
 .btn-go{
     width: 508px;
@@ -236,6 +232,6 @@ body{
     font-size: 24px;
     font-family: 'GmarketSansBold';
     margin-bottom: 100px ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-/* 모달창의 문제가 있다. */
 

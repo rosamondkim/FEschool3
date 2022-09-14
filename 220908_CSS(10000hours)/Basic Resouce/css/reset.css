@@ -49,4 +49,5 @@ table {
 button{
 	border-style: none;
     border-color: none;
+	cursor: pointer;
 }

@@ -1,0 +1,72 @@
+:root{
+    --purple: #711BFF;
+    --white: #FFFFFF;
+    --gray: #767676;
+    --light-gray:#DBDBDB;
+}
+/* reset */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* components */
+.login{
+    margin: 30px auto;
+    text-align: center;
+    padding: 18px 16px;
+    width: 350px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    overflow: hidden;
+    /* 여기에 넣어줘도 되나? */
+}
+.login-welcome{
+    text-align: left;
+    font-size: 12px;
+    line-height: 15.02px;
+}
+.login-btn{
+    width: 100%;
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 4px;
+    border-style: none;
+    border: 0;
+    padding: 13px;
+    margin:16px 0;
+}
+.weniv-logo{
+    width: 64px;
+}
+
+.login-btn span{
+    font-size: 12px;
+    line-height: 15.02px;
+}
+
+.login-info{
+    font-size: 12px;
+    color:var(--gray);
+}
+.login-info img{
+    vertical-align: bottom;
+}
+.find-info{
+    float: left;
+}
+/* .find-id{ 
+    padding-right: 4px;
+    border-right: 1px solid ;
+}
+.find-pw{
+    padding-left: 3px;
+}   */
+
+.signIn {
+    float: right;
+}
