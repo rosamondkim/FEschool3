@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    font-weight: inherit;
+}
+
+.wrapper {
+    width: 400px;
+    margin: 20px auto;
+    padding: 0 40px;
+}
+
+:root {
+    font-family: 'arial';
+}
+
+body {
+    background-color: #222;
+}
+
+.section {
+    background-color: #111;
+    color: #ddd;
+    padding: 100px 0;
+}

@@ -1,0 +1,54 @@
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #ddd;
+}
+
+.pokemon {
+    border-radius: 5px;
+    background-color: white;
+    width: 300px;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    margin: 40px auto;
+}
+
+.pokemon img {
+    
+}
+
+
+.pokemon h1 {
+    color: orange; 
+    border-bottom: 5px solid orange;
+    width: 120px;
+    margin: 0 auto 20px;
+}
+
+.pokemon p {
+    padding: 20px 20px 40px;
+}
+
+.icons {
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+.icons a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+    background-image: url(images/icon-sprite.png);
+}
+
+.icons a.twitter   { background-position: left top;  }
+.icons a.facebook  { background-position: center top;  }
+.icons a.pinterest { background-position: right top;  }
+
+.icons a:hover {
+    background-position-y: bottom;
+}

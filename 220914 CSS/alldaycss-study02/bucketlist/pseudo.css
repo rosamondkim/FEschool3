@@ -1,0 +1,14 @@
+.pseudo-padding {
+    background-color: #b7f6c2;
+    color: green;
+    line-height: 40px;
+    padding: 0 10px;
+    height: 40px;
+    cursor: pointer;
+    text-align: right;
+    opacity: 1;
+}
+
+.pseudo-padding.is_active {
+    opacity: 0;
+}

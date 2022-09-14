@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background-color: #ddd;
+}
+
+.header {
+    height: 300px;
+    background-image: url(images/cover.png);
+    background-position: center;
+    overflow: hidden;
+}
+
+.contents {
+    background-color: white;
+    width: 860px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+}
+
+.box-wrapper {
+    overflow: hidden;
+    width: 960px;
+    margin: 50px auto;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    margin: 5px;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    font-family: 'arial';
+    font-size: 50px;
+}

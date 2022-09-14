@@ -1,0 +1,41 @@
+/* reset */
+h1,p{
+	padding:0;
+	margin: 0;
+	font-size: inherit;
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+	/*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+	--purple: #673399;
+	--orange: #FE4600;
+	--light-purple: #BD8FE7;
+	--white: #FFFFFF;
+
+}
+
+body{
+	background-color: var(--purple);
+
+}
+.wrapper{
+	margin: 100px auto;
+	width: 1080px;
+}
+.portfolio-header{
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 100px;
+	color: var(--white);
+}
+.header-text::before {
+	display: block;
+	content: "";
+	background-color: var(--white);
+	width: 70px;
+	height: 1px;
+}
