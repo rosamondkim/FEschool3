@@ -1,10 +1,15 @@
 /* reset */
-h1,p{
+h1,p,h2,h3{
 	padding:0;
 	margin: 0;
 	font-size: inherit;
+	font-weight: inherit;
 }
-
+ul,li{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
 :root {
     font-family: 'Montserrat', sans-serif;
 	/*
@@ -12,8 +17,8 @@ h1,p{
 	font-weight: 700;
 	*/
 	--purple: #673399;
-	--orange: #FE4600;
-	--light-purple: #BD8FE7;
+	--orange: orangered;
+	--light-purple: #bd8fe8;
 	--white: #FFFFFF;
 
 }
@@ -26,16 +31,117 @@ body{
 	margin: 100px auto;
 	width: 1080px;
 }
+/* header */
+/* 폰트가 너무 두꺼움  */
+
 .portfolio-header{
 	display: flex;
 	justify-content: flex-start;
 	margin-bottom: 100px;
 	color: var(--white);
 }
+.header-title{
+	width: 26%;
+	font-size: 40px;
+}
+/* inset 공부하기 */
+.header-title__highlight{
+	box-shadow: inset 0 -20px 0 var(--orange);
+	z-index: -1;
+
+}
 .header-text::before {
 	display: block;
 	content: "";
-	background-color: var(--white);
-	width: 70px;
+	background-color: var(--light-purple);
+	width: 300px;
 	height: 1px;
+	margin-right: 20px;
+}
+/* width 값 체크하기 */
+.header-text{
+	font-size: 14px;
+	color:var(--light-purple);
+	width: 450px;
+	display: flex;	
+	align-items: center;
+}
+/* main 요소들  */
+.main-rest,
+.main-craft,
+.main-scrap{
+	width: 100%;
+	background-color: var(--white);
+	margin-bottom: 24px;
+	display: flex;
+	justify-content: center;
+}
+main section:nth-child(2n){
+	flex-direction: row-reverse;
+}
+main h2{
+	font-size:30px;
+	
+}
+main h3{
+	margin-bottom: 32px;
+	font-weight: 700;
+	font-size: 18px;
+	color:var(--purple);
+}
+.section-left{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 26%;
+}
+.section-left h2{
+	position: relative;
+	color: var(--white);
+
+}
+.section-left::before{
+	content: "";
+	opacity: 0.5;
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom:0;
+	background-color: var(--purple);
+}
+.main-rest .section-left{
+	background-image: url(images/photo01.png);
+}
+.main-craft .section-left{
+	background-image: url(images/photo02.png);
+}
+.main-scrap .section-left{
+	background-image: url(images/photo03.png);
+}
+.section-right{
+	font-size: 14px;
+	flex-grow: 1;
+	padding:24px;
+}
+.section-right li{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.section-right li:last-child{
+	margin-bottom: 0
+}
+.section-right li::before{
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin-right: 10px;
+	content:"";
+	border-radius: 50%;
+	background-color: var(--light-purple);
 }
