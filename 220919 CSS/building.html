@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        @keyframes hojun {
+            from{
+            background-position: 0px, 0px;
+            }
+            to {
+            background-position: -3730px, 0;
+            }
+        }
+        @keyframes cat {
+            33.3% {
+            transform: translateY(0) scale(0.3);
+            background: url(./ani/1.png) no-repeat;
+            }
+            66.6% {
+            transform: translateX(-200px) scale(0.3);
+            background: url(./ani/2.png) no-repeat;
+            }
+            100% {
+            transform: translateX(-400px) scale(0.3);
+            background: url(./ani/3.png) no-repeat;
+            }
+        }
+        .building1 {
+            width: 110px;
+            height: 180px;
+            background: url(./ani/building1.png) no-repeat;
+            animation: hojun 5s steps(33);
+            animation-fill-mode: forwards;
+        }
+        .cat{
+            width: 313px;
+            height: 436px;
+            background: url(./animation/cat.png) no-repeat;
+            animation: cat 1s infinite;
+            transform: scale(0.3);
+            position: absolute;
+            top: 10px;
+            left: 600px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="cat"></div>
+        <div class="building1"></div>
+    </body>
+</html>

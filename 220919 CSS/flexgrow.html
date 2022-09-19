@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow</title>
+    <style>
+        .container{
+            display: flex;
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+            border: 
+            1px solid black;
+            flex-grow: 1;
+        }
+        .item:nth-child(2){
+            flex-grow: 1;
+            flex-basis: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+    </div>
+</body>
+</html>
