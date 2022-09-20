@@ -4,6 +4,16 @@
     --gray: #767676;
     --light-gray:#DBDBDB;
 }
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    src: url(./SpoqaHanSansNeo-Medium.otf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    src: url(./SpoqaHanSansNeo-Regular.otf) ;
+    font-weight:400;
+}
 /* reset */
 a{
     text-decoration: none;
@@ -15,33 +25,57 @@ p{
 }
 
 /* components */
-.login{
-    margin: 30px auto;
-    text-align: center;
-    padding: 18px 16px;
+body{
+    font-size:12px;
+    font-family: 'SpoqaHanSansNeo-Medium';
+    font-family: 'SpoqaHanSansNeo-Regular';
+    line-height: 15px;
+    font-weight: 400;
+}
+.clearFix::after{
+    display:block;
+    content:"";
+    clear:both;
+}
+.txt-hide {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.cont-login{
     width: 350px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 18px 15px 17px;
     border: 1px solid var(--light-gray);
     border-radius: 5px;
     overflow: hidden;
     /* 여기에 넣어줘도 되나? */
 }
 .login-welcome{
+    margin-bottom: 16px;
     text-align: left;
     font-size: 12px;
-    line-height: 15.02px;
 }
 .login-btn{
+    display: block;
     width: 100%;
     background-color: var(--purple);
     color: var(--white);
     border-radius: 4px;
     border-style: none;
     border: 0;
-    padding: 13px;
+    padding: 13px 20px 12px;
     margin:16px 0;
+    cursor: pointer;
 }
 .weniv-logo{
-    width: 64px;
+    width: 57px ;
+    height: 11px;
+    margin-right: 8px;
 }
 
 .login-btn span{
@@ -55,18 +89,21 @@ p{
 }
 .login-info img{
     vertical-align: bottom;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
 }
 .find-info{
     float: left;
 }
-/* .find-id{ 
-    padding-right: 4px;
-    border-right: 1px solid ;
+.find-id::after{
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 12px;
+    background-color: var(--gray);
+    margin: 0 4px;
 }
-.find-pw{
-    padding-left: 3px;
-}   */
-
-.signIn {
+.join {
     float: right;
 }
