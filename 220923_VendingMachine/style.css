@@ -1,0 +1,81 @@
+:root{
+    --purple: #6327FE;
+    --light-purple: #EAE8FE;
+    --white: #ffffff;
+    --black:#000000;
+}
+body{
+    background-color: var(--light-purple);
+    
+}
+/* colacola 메인로고 */
+.main-logo{
+    display: block;
+    width:386px;
+    height: 180px;
+    margin: 0 auto;
+}
+/* 전체 wrapper */
+.wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    background-color: orange;
+    text-align: center;
+    margin:67px auto;
+}
+/* wrapper 덩어리  */
+.wrapper-first,
+.wrapper-second{
+    width: 360px;
+    padding: 31px 27px 28px 27px;
+    background-color: pink;
+}
+/* wapper 내 왼쪽 덩어리 */
+.section-cola_list{
+    display: grid;
+    grid-template-columns:  repeat(3,94px);
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    gap:12px;
+    background-color: aqua;
+
+}
+/* 콜라 요소 */
+.cola{
+    width:94px;
+    height: 130px;
+    background-color: yellow;
+}
+/* 계산 덩어리 */
+.calculation{
+    width: 100%;
+    background-color: #fff;
+}
+.cal-cont{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    gap: 12px;
+}
+.cal-btn{
+    background-color: violet;
+}
+
+/* wrapper 내 오른쪽 덩어리 */
+
+.wrapper-second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+.fundage-sec{
+    padding: 9px 27px;
+    background-color: #fff;
+}
+.purchased-sec{
+    width: 306px;
+    height: 364px;
+    background-color: skyblue;
+}

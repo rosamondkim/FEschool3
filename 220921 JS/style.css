@@ -1,0 +1,8 @@
+article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+/* .question{
+    display: none;
+} */

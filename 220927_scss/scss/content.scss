@@ -1,0 +1,13 @@
+@mixin sample{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    @content;
+}
+
+.one{
+    @include sample{
+        color: whilte;
+    }
+    background-color: #fff;
+}

@@ -1,0 +1,9 @@
+.one{
+    background-color:yellow;
+    .two{
+        font-size: 10px;
+        @at-root .three{
+            display: flex;
+        }
+    }
+}

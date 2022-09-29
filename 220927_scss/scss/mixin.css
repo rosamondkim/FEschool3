@@ -1,0 +1,62 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+li:nth-child(1) .thumb {
+  background-image: url(./assets/img/background1.png);
+}
+
+li:nth-child(2) .thumb {
+  background-image: url(./assets/img/background2.png);
+}
+
+li:nth-child(3) .thumb {
+  background-image: url(./assets/img/background3.png);
+}
+
+li:nth-child(4) .thumb {
+  background-image: url(./assets/img/background4.png);
+}
+
+li:nth-child(5) .thumb {
+  background-image: url(./assets/img/background5.png);
+}
+
+li:nth-child(6) .thumb {
+  background-image: url(./assets/img/background6.png);
+}
+
+li:nth-child(7) .thumb {
+  background-image: url(./assets/img/background7.png);
+}
+
+li:nth-child(8) .thumb {
+  background-image: url(./assets/img/background8.png);
+}
+
+li:nth-child(9) .thumb {
+  background-image: url(./assets/img/background9.png);
+}
+
+li:nth-child(10) .thumb {
+  background-image: url(./assets/img/background10.png);
+}
+
+.profile {
+  display: block;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}/*# sourceMappingURL=mixin.css.map */

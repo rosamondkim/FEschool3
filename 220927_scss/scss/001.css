@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*어려줄 주석*/
+.box-yellow {
+  background-color: orangered;
+}
+.box-red {
+  background-color: #fff;
+}
+
+.btn-submit {
+  background: #000;
+}
+.btn-close {
+  background-color: pink;
+}/*# sourceMappingURL=001.css.map */

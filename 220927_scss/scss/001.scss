@@ -1,0 +1,35 @@
+// 반복되는 코드를 만들지 말라
+// 중복된 코드로 인한 혼란
+// 작업 분량의 증가로 인한 효율성 약화
+
+
+// 한줄주석
+/*어려줄 주석*/
+
+.box {
+    &:focus{} // 가상선택자
+    &:hover{}
+    &:active{}
+    &:first-child{} 
+    &:nth-child(2){}
+    &::after{} // 가상요소
+    &::before{} 
+}
+
+.box {
+    &-yellow {
+        background-color: orangered;
+    }
+    &-red{
+        background-color: #fff;
+    }
+}
+
+.btn{
+    &-submit {
+        background: #000;
+    }
+    &-close {
+        background-color:pink;
+    }
+}

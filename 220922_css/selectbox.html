@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+    <style>
+        .txt-hide{
+            position: absolute;
+            clip:rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            bottom: 0;
+            padding:0;  
+            overflow: hidden;
+        }
+        button{
+            background: inherit; 
+            border:none; 
+            box-shadow:none; 
+            border-radius:0; 
+            padding:0; 
+            overflow:visible; 
+            cursor:pointer;
+        }
+        ul,li{
+            padding:0;
+            margin:0;
+            list-style-type: none;
+        }
+        .cont-select{
+            position: relative;
+            margin:100px auto;
+            width: 200px;
+        }
+        .select-btn{
+            width: 100%;
+            text-align:left;
+            background-color: #fff;
+            border: 1px solid #C4C4C4;
+            border-radius: 10px;
+            padding: 11px 20px 11px 13px;
+            font-size: 12px;
+            font-weight:400;
+            line-height: 16px;
+            /* 오른쪽으로 붙었다가 12px 이동함 */
+            background: url("images/down.png")right 12px center no-repeat;
+
+            /* 한줄 말줄임 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .select-btn:focus{
+            border: 1px solid purple;
+            outline: 3px solid #F8E4FF;
+        }
+        .select-btn.on{
+            background: url("images/up.png") right 12px center 						no-repeat;
+            transform: rotate(180deg);
+            /* 애니메이션 주고싶다 */
+        }
+        .select-btn.on+.select-list{
+            display: block;
+        }
+        /* 버튼에 on 클래스 활성화되었을때, 그 다음 형제인 list 들을 block으로 만들어라 */
+        .select-list{
+            display: block;
+            position: absolute;
+            top: 49px;
+            left:0;
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #C4C4C4;
+            border-radius: 10px;
+        }
+        .select-list li{
+            padding: 5px 7px;
+        }
+        .select-list li button{
+            width: 100%;
+            text-align: left;
+            padding: 7px 10px;
+            font-size:12px;
+            line-height: 16px;
+            border:none;
+            border-radius: 8px;
+
+        }
+        .select-list li button:focus,
+        .select-list li button:hover{
+            background-color: #F8E4FF;
+        }
+    </style>
+</head>
+<body>
+    <article class="cont-select">
+        <h2 class="txt-hide">최애 프로그래밍 언어를 선택해주세요</h2>
+        <button type="button" class="select-btn">최애 프로그래밍 언어
+        </button>
+        <ul class="select-list">
+            <li><button type="button">자바스크립트</button></li>
+            <li><button type="button">파이썬</button></li>
+            <li><button type="button">C#</button></li>
+            <li><button type="button">C/C++</button></li>
+            <li><button type="button">Java</button></li>
+        </ul>
+    </article>
+</body>
+</html>

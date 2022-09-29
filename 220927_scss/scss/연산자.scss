@@ -1,0 +1,28 @@
+// 비교연산자
+
+@debug 1px == 1px; //t
+@debug 1px != 1em; //t
+
+
+//산술연산자
+
+@debug 10s + 15s; // 25s
+@debug 1in - 10px; // 0.8958333333in
+@debug 5px * 3px; // 15px*px
+@debug 1in % 9px; // 0.0625in (1in == 96px)
+
+.one{
+    font-size: 10px + 10px;
+}
+.two{
+    font-size: 10px - 10px;
+}
+.three{
+    font-size: 10px * 10px; //error
+}
+.four{
+    font-size: 10px % 3px;;
+    //나머지연산.
+    // 곱하기와 나누기와는 다르게 2개의 단위가 모두 있어도 에러가 나지 않는다.
+}
+

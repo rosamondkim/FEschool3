@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .txt-hide{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+        .label-hold::before{
+            display: inline-block;
+            content:'';
+            margin-right: 5px;
+            width: 22px;
+            height: 22px;
+            vertical-align: -5px;
+            background-image: url(images/icon_check_empty.png);
+            cursor: pointer;
+        }
+        .input-Hold:checked+.label-hold:before{
+            cursor: pointer;
+            background-image: url(images/icon_check.png);
+        }
+        .input-Hold:focus+.label-hold:before{
+            outline:2px solid #000;
+            border-radius: 50%;
+            outline-offset: 5px;
+        }
+        h2 {
+    margin: 30px;
+}
+
+.btn-select {
+    width: 200px;
+    height: 30px;
+    background: darkgray;
+    border:none;
+    color: #fff;
+}
+
+.list-member {
+    display: none;
+    width: 200px;
+    height: 30px;
+}
+
+.list-member.on {
+    display: block;
+}
+
+.list-member li {
+    height: 30px;
+    width: 200px;
+    list-style: none;
+}
+
+.list-member li button {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-top: none;
+
+}
+
+.list-member li button:hover {
+    background-color: bisque;
+}
+    </style>
+    <title>css실무</title>
+</head>
+<body>
+    <input id="inpHold" type="checkbox" class="input-Hold txt-hilde">
+    <label for="inpHold" class="label-hold">선택해주세요</label>
+    <h2>셀렉트 박스 만들기</h2>
+<button class="btn-select">당신의 하이라이트 최애 맴버는??</button>
+<ul class="list-member">
+    <li><button type="button">윤두준</button></li>
+    <li><button type="button">양요섭</button></li>
+    <li><button type="button">이기광</button></li>
+    <li><button type="button">손동운</button></li>
+    <li><button type="button">저는다좋아요</button></li>
+</ul>
+<script>
+    const btn = document.querySelector('.btn-select');
+    const list = document.querySelector('.list-member');
+    btn.addEventListener('click', () => {
+        list.classList.toggle('on');
+    });
+    list.addEventListener('click', (event) => {
+        if (event.target.nodeName === "BUTTON") {
+            btn.textContent = event.target.textContent;
+            list.classList.remove('on');
+        }
+    });
+</script>
+</body>
+</html>

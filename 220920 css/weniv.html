@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        :root{
+            --purple: #711BFF;
+            --gray:#767676;
+            --light-gray:#DBDBDB;
+        }
+        @font-face {
+            font-family: 'Spoqa Han Sans Neo';
+            src: url("images/fonts/SpoqaHanSansNeo-Medium.otf");
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: 'Spoqa Han Sans Neo';
+            src: url("images/fonts/SpoqaHanSansNeo-Regular.otf");
+            font-weight: 400;
+        }
+        
+        body{
+            font-family: 'Spoqa Han Sans Neo','sans-sefif';
+            font-size:12px;
+            line-height: 15px;
+            font-weight: 400;
+        }
+        .cont-login{
+            width: 350px;
+            margin:30px auto;
+            padding:19px 16px;
+            border:1px solid #DBDBDB;
+            border-radius: 5px;
+        }
+        .cont-login .login-btn{
+            display: block;
+            width: 100%;
+            background-color: var(--purple);
+            color: #ffffff;
+            border-radius: 4px;
+            text-align: center;
+            margin: 16px 0;
+            padding: 13px 0;
+            font-weight: 500;
+        }
+        .weniv-logo{
+            width: 57px;
+            height: 11px;
+            margin-right: 7px;
+        }
+        .login-find,
+        .login-join{
+            color:var(--gray);
+        }
+
+        .login-find *{
+            float:left;
+        }
+
+        .login-join{
+            float: right;
+        }
+        .login-find img,
+        .login-join img {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+        }
+        .login-find .find-id::after{
+            display: inline-block;
+            content: '';
+            background-color: var(--gray);
+            width: 1px;
+            height: 11px;
+            margin: 0 5px;
+        }
+    </style>
+
+    <title>weniv login</title>
+</head>
+<body>
+    <article class="cont-login clearFix">
+        <h2 class="txt-hide">위니브 로그인창</h2>
+        <p class="login-txt">더 편리해진 위니브에 오신 것을 환영합니다.</p>
+        <a href="" class="login-btn">
+            <img src="./correct/images/weniv-logo.png" alt="" class="weniv-logo">
+            <span>로그인</span>
+        </a>
+            <div class="login-find">
+                <img src="./correct/images/icon-lock.png" alt="" class="find-img">
+                <a href="" class="find-id">아이디</a>
+                <a href="" class="find-pw">비밀번호찾기</a>
+            </div>
+            <div class="login-join">
+                <img src="./correct/images/icon-user.png" alt="" class="join-img">
+                <a href="" class="join-link">회원가입</a>
+        </div>
+    </article>
+</body>
+</html>

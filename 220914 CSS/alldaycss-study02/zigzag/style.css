@@ -47,7 +47,7 @@ body{
 	z-index: -1;
 
 }
-/* 가상요소 */
+/* header의 가상요소 */
 .header-text::before {
 	display: block;
 	content: "";
@@ -56,7 +56,7 @@ body{
 	margin-right: 30px;
 	height: 2px;
 }
-/* width 값 체크하기 */
+
 .header-text{
 	font-size: 14px;
 	color:var(--light-purple);

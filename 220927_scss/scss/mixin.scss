@@ -1,0 +1,43 @@
+@mixin center-xy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    @include center-xy;
+}
+.aside{
+    @include center-xy;
+    background-color: #fff;
+}
+
+$url: './assets/img/';
+
+@mixin thumb($total, $img, $type) {
+    @for $i from 1 through $total {
+        li:nth-child(#{$i}) .thumb {
+            background-image:url(#{$url} + #{$img} + #{$i} + '.' + #{$type});
+        }
+    }
+}
+
+@include thumb(10, 'background', 'png');
+
+@mixin circleBase {
+    display: block;
+    border-radius: 50%;
+    -ms-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+@mixin circle($size, $color:null) {
+    // $size: unitCheck($size);
+    @include circleBase;
+    width: $size;
+    height: $size;
+    background-color: $color;
+}
+
+.profile {
+    @include circle(100px, red);
+}

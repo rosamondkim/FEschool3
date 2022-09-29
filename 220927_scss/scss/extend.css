@@ -1,0 +1,33 @@
+.profile-user, .comment-user {
+  background-image: url("../assets/user.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.comment-user {
+  border-width: 10px;
+}
+
+.message-button, .follow-button {
+  width: 133px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.follow-button {
+  background-color: #ffffff;
+  color: #ff375f;
+  border: 3px solid #ff375f;
+}
+
+.message-button {
+  background-color: #ff375f;
+  color: white;
+}/*# sourceMappingURL=extend.css.map */
