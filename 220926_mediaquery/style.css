@@ -125,26 +125,61 @@ strong {
 @media (max-width: 768px) {
 	.wrap{
 		flex-direction: column;
-		gap:6rem;
+		gap: 6rem;
+		margin:10rem auto;
+	}
+	.section-text p{
+		font-size: 1.8rem;
+	}
+	.section-field ul{
+		flex-direction: row;
 
 	}
-	.section-text{
-		margin-bottom: 60px;
+	.section-field ul li{
+		/* width: 50%; */
+		/* width50과 flex-basis 50의 차이는? */
+		flex-basis: 50%;
 	}
-
+	.section-field ul li a{
+		padding: 3rem 3rem 2rem 3rem;
+		/* padding이 폰트사이즈에 비례해서 커지거나 작아졌으면 좋겠다면 em */
+		gap: 9.8rem;
+	
+	}
+	.section-field .field-title{
+		font-size: 2.4rem;
+	}
 }
 
 /* 모바일 */
 @media (max-width: 500px) {
 	.wrap{
-	}
-	.section-text{
-		margin-bottom: 40px;
+		gap: 4rem;
+		max-width: cacl(100%-3.2rem);
 	}
 	.section-text h1{
-		font-size: 36px;
+		font-size: 3.6rem;
+
 	}
 	.section-text p{
-		font-size: 14px;
+		font-size: 1.4rem;
+		margin-top: 1.4rem;
+		
 	}
-}
+	.section-field ul{
+		flex-direction: column;
+		gap: 1.4rem;
+
+	}
+	.section-field ul li a{
+		padding: 3em 3em 2em 3em;
+		gap: 11.2rem;
+	}
+	.section-field .field-title{
+		font-size: 2em;
+
+	}
+	.section-field .field-go{
+		font-size: 1.4em;
+	}
+}}
