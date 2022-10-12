@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+</head>
+<body>
+    <button id="btn1">클릭1</button>
+    <button id="btn2">클릭2</button>
+    <script>
+        let test1 ={
+            one:1,
+            two:2,
+            three:function(){
+                console.log(this);
+            }
+        };
+        let test2= test1.three;
+
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+
+        btn1.addEventListener("click",test1.three);
+        btn2.addEventListener("click",test2)
+
+    </script>
+</body>
+</html>
