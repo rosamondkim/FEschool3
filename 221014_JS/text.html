@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <p></p>
+    <input type="text">
+    <button>write</button>
+    <script>
+        const myBtn = document.querySelector("button")
+        const myP = document.querySelector("p");
+        const myInput = document.querySelector("input")
+
+        // 버튼 누르면 input 값이 P태그에 작성되도록 함
+        myBtn.addEventListener('click', function(){
+            myP.textContent = myInput.value;
+        });
+        // myP.innerHTML = "<strong>I'm Strong!!</strong>";
+        // myP.outerHTML = "<div></div>";
+        //outerHTML -> 요소 변경해버림
+
+        // innerHTML 은 요소(element) 내에 포함된 HTML 마크업을 가져오거나 설정합니다.
+        // innerText 속성은 요소의 렌더링된 텍스트 콘텐츠를 나타냅니다. (렌더링된에 주목하세요. innerText는 "사람이 읽을 수 있는" 요소만 처리합니다.)
+        // textContent 속성은 노드의 텍스트 콘텐츠를 표현합니다.
+    //https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/innerText#%EC%98%88%EC%A0%9C 여기 들어가보기
+
+    // myP.innerHTML ="<strong>Im strong</strong>"
+    myP.innerText ="<strong>Im strong</strong>"
+    
+
+    /* 위 코드와 같음
+    const elStrong = document.createElement("strong");
+    const mytxt = document.createTextNode("I'm strong")
+    
+    elStrong.appendChild(mytxt);
+    myP.appendChild(elStrong);
+    */
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    html 요소 추가해야함
+    <script>
+    const span = document.createElement("span");
+    const myText = document.createTextNode('good morning!');
+
+    span.appendChild(myText);
+    const sibling = document.getElementById("childElement");
+    const parentDiv = document.getElementById("parentElement");
+
+    //span 요소를 sibling 의 앞으로 배치
+    parentDiv.insertBefore(span, sibling);
+    </script>
+</body>
+</html>

@@ -38,8 +38,6 @@ d.getHours()
 d.getMinutes()
 d.getSeconds()
 
-d.getFullYear()
-// d.getYear() // 1900년도부터 연도 계산, 쓰지 않습니다. 잊어버리세요.
 
 // 2023년 1월! 우리의 수료시점!
 new Date(2023, 0)
@@ -63,9 +61,9 @@ today.toTimeString(); // -> 12:30:00 GMT+0900 (대한민국 표준시)
 
 today = new Date('2023/1/20/10:00:00')
 today.toString();
-today.toISOString();
-today.toISOString().slice(0, 10);
-today.toISOString().slice(0, 10).replace(/-/g, '')
+today.toISOString();//
+today.toISOString().slice(0, 10); //2022-10-13
+today.toISOString().slice(0, 10).replace(/-/g, '') //20221013
 
 //http://www.w3bai.com/ko/tags/ref_language_codes.html#gsc.tab=0
 //http://www.w3bai.com/ko/tags/ref_country_codes.html#gsc.tab=0
@@ -85,7 +83,6 @@ const dayNames = [
 ];
 // getDay 메서드는 해당 요일(0 ~ 6)을 나타내는 정수를 반환한다.
 const day = dayNames[today.getDay()];
-
 const year = today.getFullYear();
 const month = today.getMonth() + 1;
 const date = today.getDate();

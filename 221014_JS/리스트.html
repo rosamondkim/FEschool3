@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    <ul></ul>
+    <button>MAke me More!</button>
+    <script>
+        const myBtn = document.querySelector("button");
+        const myUl= document.querySelector("ul");
+
+        myBtn.addEventListener('click',function(){
+            for (let i =0;i<5;i++){
+                // li 요소를 생성합니다
+                const myLi = document.createElement("li");
+                
+                // Text 노드를 생성합니다
+                const myTxt= document.createTextNode(`안녕하세요! ${i}번째`);
+                myLi.appendChild(myTxt);
+                myUl.appendChild(myLi);
+            }
+            //자식 요소 제거합니다
+            const li = document.querySelector('li');
+            myUl.removeChild(li);
+
+        })
+    </script>
+</body>
+</html>
