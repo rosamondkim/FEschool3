@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            .memo-list{
+                margin-top: 10px;
+                border: 1px solid black;
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="" id="input" />
+        <button type="submit" id="submit-btn">입력</button>
+        <button id="delete-btn">삭제</button>
+        <div class="memo-list"></div>
+        <script>
+            const memoInput = document.getElementById("input");
+            const submitBtn = document.getElementById("submit-btn");
+            const deleteBtn = document.getElementById("delete-btn");
+            const memoList = document.querySelector(".memo-list");
+
+            memo = [];
+
+            function createMemo(){
+                let newMemo = memoInput.value;
+                memo.push(newMemo);
+                localStorage.setItem("메모",JSON.stringify(memo));
+                
+            }
+
+            submitBtn.addEventListener("click",createMemo);
+        </script>
+    </body>
+</html>
