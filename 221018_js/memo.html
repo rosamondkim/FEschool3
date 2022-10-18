@@ -12,29 +12,65 @@
                 height: 300px;
             }
         </style>
-        <title>Document</title>
+        <title>김민승의엉터리메모장</title>
     </head>
     <body>
-        <input type="text" name="" id="input" />
+        <input type="text" name="" id="input" required/>
         <button type="submit" id="submit-btn">입력</button>
-        <button id="delete-btn">삭제</button>
-        <div class="memo-list"></div>
+        <button id="delete-btn">전체삭제</button>
+        <div class="memo-area">
+            <ul class="memo-list">
+            </ul>
+        </div>
         <script>
             const memoInput = document.getElementById("input");
             const submitBtn = document.getElementById("submit-btn");
             const deleteBtn = document.getElementById("delete-btn");
+            const memoArea = document.querySelector(".memo-area");
             const memoList = document.querySelector(".memo-list");
-
-            memo = [];
-
+            
+            memoArray = [];
+            // memo 배열 생성하기
+            
             function createMemo(){
                 let newMemo = memoInput.value;
-                memo.push(newMemo);
-                localStorage.setItem("메모",JSON.stringify(memo));
+                const newMemoObj ={
+                    text:newMemo,
+                };
+                memoArray.push(newMemoObj);
+                localStorage.setItem("메모",JSON.stringify(memoArray));
                 
+                //오류 1
+                // let memoItem = document.createElement("li");
+                // memoItem.innerText = JSON.parse(localStorage.getItem("메모")).map((x)=>x.text);
+                // memoList.appendChild(memoItem);
+                
+                //오류 2
+                JSON.parse(localStorage.getItem("메모")).map((x)=>{
+                let memoItem = document.createElement("li");
+                memoItem.innerText = x.text; 
+                memoList.appendChild(memoItem);
+                });
+
+                memoInput.value="";
             }
 
             submitBtn.addEventListener("click",createMemo);
+
+            function deleteAllMemo(e){
+                localStorage.removeItem("메모");
+                // memo.map((x)=>x.remove())
+                // memoList.removeChild() 현재 엘리먼트의 자식 엘리먼트 1개 삭제.부모 엘리먼트와 삭제할 엘리먼트 2개의 파라미터가 필요함.
+                
+                while(memoList.hasChildNodes()){
+                    // while문 내부 -> memoList 가 자식을 갖고있는지 참/거짓판별
+                    memoList.removeChild(memoList.firstChild);
+                }
+                console.log(memoList);
+                
+            }
+
+            deleteBtn.addEventListener("click",deleteAllMemo);
         </script>
     </body>
 </html>

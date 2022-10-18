@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <input type="text" class="tit-memo" />
+        <textarea class="txt-memo"></textarea>
+        <button>Add</button>
+        <ul class="list-memo"></ul>
+
+        <script>
+            const titMemoEl = document.querySelector(".tit-memo");
+            const txtMemoEl = document.querySelector(".txt-memo");
+            const listMemoEl = document.querySelector(".list-memo");
+            let memo = [];
+
+            const onSubmit = (e) => {
+                memo = [
+                    ...memo,
+                    { title: titMemoEl.value, content: txtMemoEl.value },
+                ];
+                localStorage.setItem("memo", JSON.stringify(memo));
+
+                renderMemo();
+            };
+
+            const renderMemo = () => {
+                removeChildNode(listMemoEl);
+                const memoList = localStorage.getItem("memo");
+
+                JSON.parse(memoList).forEach(({ title, content }, i) => {
+                    const li = document.createElement("li");
+
+                    const strong = document.createElement("strong");
+                    strong.textContent = title;
+
+                    const p = document.createElement("p");
+                    p.textContent = content;
+
+                    li.append(strong, p);
+                    listMemoEl.appendChild(li);
+                });
+            };
+
+            const removeChildNode = (el) => {
+                while (el.hasChildNodes()) {
+                    el.removeChild(el.firstChild);
+                }
+            };
+
+            document
+                .querySelector("button")
+                .addEventListener("click", onSubmit);
+        </script>
+    </body>
+</html>
