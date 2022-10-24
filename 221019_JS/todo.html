@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.
+        <button type="button">삭제삭제삭제할거야</button>
+    </p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+    <script>
+        const txts = document.querySelectorAll("p");
+        const buttons = document.querySelectorAll("button");
+
+        for(const item of txts){
+            item.addEventListener("click",()=>{
+                console.log(event.target);
+                alert(event.target.textContent.slice(0, -2));
+            })
+        }
+
+        for(const item of buttons){
+            item.addEventListener('click',(e)=>{
+                const result = confirm('삭제할거야?');
+        
+                // event.stopPropagation();
+                // if(result){
+                //     item.parentsElemet.remove();
+                // }
+            })
+        }
+
+                // IE대응
+        // Array.prototype.forEach.call(txts,(item)=>{
+        //     //어레이로부터 foreach문을 call이 빌려온다. 
+        //     item.addEventListener("click",()=>{
+        //         alert(event.target.textContent.slice(0, -2));
+        //     });
+        // })
+
+    </script>
+</body>
+</html>

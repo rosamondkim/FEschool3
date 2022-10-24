@@ -1,0 +1,68 @@
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>위니브 스토어</title>
+        <link
+            href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="src/style/style.css" />
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script>
+            const root = document.getElementById("root");
+
+            // 통일성을 해친겁니다.
+            // async await을 사용하셨으면 아래 코드도 async await을 사용하시는 것이 좋겠죠?
+            async function getProductData() {
+                const response = await fetch(
+                    "http://test.api.weniv.co.kr/mall"
+                );
+                const product = response.json();
+                return product;
+            }
+
+            getProductData()
+                .then((product) => {
+                    // console.log(product);
+                    const mainElement = document.createElement("main");
+                    mainElement.classList.add("product");
+                    // console.log(mainElement);
+
+                    // 통일성을 해친겁니다.
+                    // innerHTML로 처음부터 했으면 끝까지 innerHTML로
+                    // DOM 컨트롤로 처음부터 했으면 끝까지 DOM 컨트롤로
+                    mainElement.innerHTML = `
+                        <h1 class="ir">상품목록</h1>
+                        <ul class="product-list"></ul>
+                    `;
+                    // console.log(mainElement);
+
+                    const productList =
+                        mainElement.querySelector(".product-list");
+                    product.forEach((item) => {
+                        // console.log(item);
+                        const productDetailLink = document.createElement("a");
+                        productDetailLink.href = `/detail/${item.id}`;
+                        productDetailLink.innerHTML = `
+                            <li>
+                                <div>${item.thumbnailImg}</div>
+                                <div>${item.productName}</div>
+                                <div>${item.price}</div>
+                            </li>
+                            `;
+                        // console.log(productDetailLink);
+                        productList.append(productDetailLink);
+                    });
+                    console.log(mainElement);
+                })
+                .then()
+                .catch();
+        </script>
+    </body>
+</html>

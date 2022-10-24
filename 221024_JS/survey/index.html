@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="mainForm">
+        <!-- 폼 안의 내용 그룹지어줄때 사용하는 fieldset -->
+        <fieldset>
+            <!-- fieldset 안에 첫번째 자식 요소로 들어가야하는 제목. legend -->
+            <legend>JS스터디모집 설문조사</legend>
+            <progress max="100" value="0" class="bar-progress"></progress>
+            <p class="msg-notice">설문지를 작성해주세요!</p>
+            <label for="q1">질문1. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q1" required>
+            <label for="q2">질문2. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q2" required>
+            <label for="q3">질문3. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q3" required>
+            <label for="q4">질문4. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q4" required>
+            <label for="q5">질문5. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q5" required>
+            <button type="submit">제출하기</button>
+            <button type="reset">초기화</button>
+        </fieldset>
+
+    </form>
+    <script>
+        const mainForm = document.querySelector("#mainForm");
+        const progressBar = mainForm.querySelector('.bar-progress');
+        const message = mainForm.querySelector('.msg-notice');
+        const inputs = mainForm.querySelectorAll('input');
+        const btnReset = mainForm.querySelector('button[type="reset"]');
+
+
+        // 유효한 인풋의 갯수를 저장
+        mainForm.addEventListener('keyup', () => {
+            let validCounter = 0;
+
+            inputs.forEach((item) => {
+                if (item.validity.valid) { 
+                    validCounter++;
+                }
+            })
+            
+            // const result = Array.prototype.filter.call(inputs,(item)=>{
+            //     return item.validity.valid
+            // })
+            // 이거 할거면 switch(result.length)로 바꿔야함
+
+            switch (validCounter) {
+                case 1:
+                    message.textContent = "좋습니다! 계속 진행하세요!";
+                    progressBar.setAttribute('value', 20);
+                    break;
+                case 2:
+                    message.textContent = "좋은 답변이군요! 계속 진행하세요!";
+                    progressBar.setAttribute('value', 40);
+                    break;
+
+                case 3:
+                    message.textContent = "절반 이상 지났습니다! 계속 진행하세요!";
+                    progressBar.setAttribute('value', 60);
+                    break;
+
+                case 4:
+                    message.textContent = "거의 완료되었습니다! 계속 진행하세요!";
+                    progressBar.setAttribute('value', 80);
+                    break;
+                case 5:
+                    message.textContent = "이제 제출해주세요!";
+                    progressBar.setAttribute('value', 100);
+                    break;
+                default:
+                    message.textContent ="설문지를 작성해주세요";
+                    progressBar.setAttribute("value",0);
+            }
+
+
+        })
+    </script>
+</body>
+</html>

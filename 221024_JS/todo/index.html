@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투두리스트 다운로더</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 
+        cross origin: CORS 요청을 처리하는 방식을 명시합니다. 
+        교차 출처 리소스 공유 (Cross-Origin Resource Sharing) 의 약자입니다. 다른 출처의 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 메커니즘입니다.
+        anonymous : 따로 데이터를 요청하는 유저의 신원 확인을 하지 않습니다. 
+    -->
+    <script src="https://kit.fontawesome.com/9e1a07a81c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <article class="artcl_main">
+        <!-- header : 소개 및 탐색에 도움을 주는 콘텐츠를 나타냅니다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함할 수 있습니다. -->
+        <header>
+            <h2 class="ir_hidden">투두리스트 다운로더</h2>
+            <label for="inp_todo" class="ir_hidden">투두리스트 입력창</label>
+            <input id="inp_todo" placeholder="ex) 일기 쓰기" maxlength="30">
+            <button type="button">등록<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        </header>
+        <ul class="list_todo">
+            <!-- <li>테스트입니다 테스트입니다!<button><i class="fa-solid fa-trash"></i></button></li> -->
+        </ul>
+        <!-- <button class="btn" style="display: block;">리스트 다운로드</button> -->
+    </article>
+    <script src="app.js"></script>
+</body>
+
+</html>

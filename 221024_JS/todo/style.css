@@ -1,0 +1,96 @@
+.ir_hidden {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.artcl_main {
+    display: flow-root;
+}
+
+.artcl_main header {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.artcl_main header input {
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+.artcl_main header button {
+    flex-shrink: 0;
+    font-size: 1.2em;
+    flex-basis: 100px;
+}
+
+.artcl_main .list_todo {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    background-color: goldenrod;
+    border-radius: 5px;
+}
+
+.artcl_main .list_todo li {
+    padding: 5px 15px;
+    background-color: whitesmoke;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: #222;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.3);
+}
+
+.artcl_main .list_todo li+li {
+    margin-top: 20px;
+}
+
+.list_todo li button {
+    float: right;
+    padding: 10px;
+    margin: 0px 0px 0px 20px;
+    vertical-align: top;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: teal;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.list_todo li button:hover {
+    background-color: tomato;
+}
+
+.list_todo .done {
+    text-decoration: line-through;
+}
+
+.artcl_main .btn {
+    display: none;
+    float: right;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: teal;
+    color: #fff;
+    transition: .3s;
+}
+
+.artcl_main .btn:hover {
+    background-color: tomato;
+}
+
+.txt_invalid {
+    color: red;
+}
