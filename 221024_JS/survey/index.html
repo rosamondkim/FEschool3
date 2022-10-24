@@ -62,12 +62,10 @@
                     message.textContent = "좋은 답변이군요! 계속 진행하세요!";
                     progressBar.setAttribute('value', 40);
                     break;
-
                 case 3:
                     message.textContent = "절반 이상 지났습니다! 계속 진행하세요!";
                     progressBar.setAttribute('value', 60);
                     break;
-
                 case 4:
                     message.textContent = "거의 완료되었습니다! 계속 진행하세요!";
                     progressBar.setAttribute('value', 80);
@@ -80,9 +78,13 @@
                     message.textContent ="설문지를 작성해주세요";
                     progressBar.setAttribute("value",0);
             }
-
-
         })
+
+        btnReset.addEventListener('click', () => {
+            message.textContent = "설문지를 작성해주세요!";
+            progressBar.setAttribute('value', 0);
+        })
+
     </script>
 </body>
 </html>

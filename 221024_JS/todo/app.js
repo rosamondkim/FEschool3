@@ -20,7 +20,7 @@ const downloadBtn = document.createElement('button');
 downloadBtn.classList.add('btn');
 downloadBtn.textContent = '리스트 다운로드';
 main.appendChild(downloadBtn);
-downloadBtn.addEventListener('click', downloadFile);
+// downloadBtn.addEventListener('click', );
 
 
 // 투두를 저장할 배열
@@ -59,13 +59,12 @@ function createListItem() {
         // 다운로드 버튼 노출 함수
         showDownload();
 
-
     } else {
         errorMsg('내용을 작성해주세요');
     }
 }
 
-// 목록 요소를 생성합니다.
+// 목록 요소를 생성합니다.그린다.
 function genItem(val, complete) {
     const li = document.createElement('li');
     li.textContent = val;
@@ -148,30 +147,4 @@ function errorMsg(msg) {
     message.style.display = 'block';
     message.textContent = msg;
     userTask.focus();
-}
-
-
-function downloadFile() {
-    let temp = '<나의 할일 목록>\n\n';
-
-    const curList = listTodo.querySelectorAll('li');
-
-    curList.forEach((el) => {
-        if (el.classList.contains('done')) {
-            temp += '완료 - ';
-        }
-        temp += `${el.textContent}\n`;
-    })
-
-    let element = document.createElement('a');
-
-    element.setAttribute('href', `data:text/plain;charset=utf-8,${temp}`);
-
-    element.setAttribute('download', 'todoList.hwp');
-
-    // 클릭 가능한 요소라면 클릭을 시뮬레이션합니다.
-    element.click();
-
-    // 메모리상에서 a 태그를 제거합니다.
-    element = null;
 }
