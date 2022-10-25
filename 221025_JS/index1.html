@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    
+    <script>
+    //     const me = {
+    //         name : '민승',
+    //         address : '경기도시흥시',
+    //         phoneNum : '010-76609-7034',
+    //         canSwim : function(){
+    //             console.log('민승이 헤엄을 친다.');
+    //         },
+    //         teaching : function(youngJun){
+    //             student.levelUp();
+    //         }
+    //     }
+
+    // const youngJun = {
+    //     level: 1,
+    //     levelUp : function(){
+    //         this.level++;
+    //     }
+    // }
+
+    // me.teaching(youngJun);
+
+
+    // 실습2
+    function Me(name,address,phoneNum){
+        this.name = name;
+        this.address = address;
+        this.phoneNum = phoneNum;
+    }
+
+    Me.prototype.canSwim = function(){
+        console.log('민승이가 수영한다')
+    }
+    Me.prototype.teaching = function(youngJun){
+        youngJun.levelUp();
+    }
+    const me = new Me = ('밍','제주도','010-000');
+
+    function youngJun(level){
+        this.level = level;
+    }
+
+
+    Student.prototype.levelUp = function(){
+        this.level ++;
+    }
+
+    </script>
+</body>
+</html>
