@@ -7,7 +7,7 @@ class Sausage{
         console.log(`${this.name1}와 ${this.name2}맛이 난다!`)
     }
 } 
-const sausage = new Sausage('파','양파')
+const sausage = new Sausage('차즈','칠리')
 sausage.taste()
 
 class FiresSausage extends Sausage{
@@ -23,5 +23,5 @@ class FiresSausage extends Sausage{
 }
 
 
-const firesSausage = new FiresSausage('파','양파','불');
+const firesSausage = new FiresSausage('치즈','칠리','불');
 firesSausage.fireTaste(); 
