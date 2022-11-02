@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <h2 class="blue">hello</h2>
+    <p id="one" class="blue">hellooooooo</p>
+    <script>
+        $("h1,h2,p").toggleClass("blue");
+        $("p").append("!!");
+    </script>
+</body>
+</html>

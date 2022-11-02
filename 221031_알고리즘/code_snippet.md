@@ -447,11 +447,10 @@ let list = {
     head: null
 }
 
-let node1 = {value: 46, next: null}
+let root = {value: 46, next: null}
 let node2 = {value: 49, next: null}
 let node3 = {value: 97, next: null}
-let node4 = {value: 12, next: null}
-
+let node4 = {value: 12, next: null}n
 node1.next = node2
 node2.next = node3
 node3.next = node4
@@ -731,3 +730,296 @@ l.append(10)
 l.append(20)
 l.append(30)
 ```
+7. step 7 - (중요) toString을 순회로 구현
+```js
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        let init = new Node("init");
+        this.head = init;
+        this.tail = init;
+        this.length = 0;
+    }
+
+    // length() { //this.length가 덮어 씀
+    //     return this.length;
+    // }
+
+    toString() {
+        let 순회용현재노드 = this.head;
+
+        //처음 순회용 현재 노드가 init이기 때문에
+        순회용현재노드 = 순회용현재노드.next;
+
+        let 출력데이터 = "";
+        for (let i = 0; i < this.length; i++) {
+            출력데이터 += `${순회용현재노드.data}, `;
+            순회용현재노드 = 순회용현재노드.next;
+        }
+
+        return 출력데이터;
+    }
+
+fullData(){
+    return JSON.parse(this.toString())
+}
+
+    append(data) {
+        let 새로운노드 = new Node(data);
+        // 마지막 값(null)은 새로운 노드가 됨
+        this.tail.next = 새로운노드;
+        // 마지막 노드는 새로운 노드가 됨
+        this.tail = 새로운노드;
+        this.length += 1;
+    }
+}
+
+l = new LinkedList();
+l.append(1);
+l.append(2);
+l.append(3);
+l.append(10);
+l.append(20);
+l.append(30);
+```
+
+9. step 9 - linked list에 node 삽입하기
+
+
+
+10. Double linked List 의 기본형태
+```js
+const list  = {
+    head : null;
+}
+
+let list1 = {value:12, next:null, pre:null}
+let list2 = {value:99, next:null, pre:null}
+let list3 = {value:37, next:null, pre:null}
+let list4 = {value:2, next:null, pre:null}
+
+list1.next = list2
+list2.next = list3
+list3.next = list4
+
+list1.pre = list.head
+list2.pre = list1
+list3.pre = list2
+list4.pre = list3
+
+
+
+
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        let init = new Node("init");
+        this.head = init;
+        this.tail = init;
+        this.length = 0;
+    }
+
+    // length() { //this.length가 덮어 씀
+    //     return this.length;
+    // }
+
+    toString() {
+        let 순회용현재노드 = this.head;
+
+        //처음 순회용 현재 노드가 init이기 때문에
+        순회용현재노드 = 순회용현재노드.next;
+
+        let 출력데이터 = "";
+        for (let i = 0; i < this.length; i++) {
+            출력데이터 += `${순회용현재노드.data}, `;
+            순회용현재노드 = 순회용현재노드.next;
+        }
+
+        // return 출력데이터;
+        return "[" + 출력데이터.slice(0, -2) + "]";
+    }
+
+    fullData() {
+        return JSON.parse(this.toString());
+    }
+
+    append(data) {
+        let 새로운노드 = new Node(data);
+        // 마지막 값(null)은 새로운 노드가 됨
+        this.tail.next = 새로운노드;
+        // 마지막 노드는 새로운 노드가 됨
+        this.tail = 새로운노드;
+        this.length += 1;
+    }
+
+    insert(index, data) {
+        let 순회용현재노드 = this.head;
+        순회용현재노드 = 순회용현재노드.next;
+
+        for (let i = 0; i < index - 1; i++) {
+            순회용현재노드 = 순회용현재노드.next;
+        }
+
+        let 새로운노드 = new Node(data);
+        새로운노드.next = 순회용현재노드.next;
+        순회용현재노드.next = 새로운노드;
+        this.length += 1;
+    }
+}
+
+l = new LinkedList();
+l.append(1);
+l.append(2);
+l.append(3);
+l.append(10);
+l.append(20);
+l.append(30);
+
+
+const tree ={
+    root: {
+        value: 5,
+        left:{
+            value: 3,
+            left:{
+                value: 1,
+                left: null,
+                right: null
+            },
+            right: {
+                value: 4,
+                left: null,
+                right: null
+            }
+        },
+        right:{
+            value: 8,
+            left:{
+                value: 6,
+                left: null,
+                right: null
+            },
+            right:{
+                value: 9,
+                left: null,
+                right: null
+            }
+        }
+    }
+}
+
+class 로
+
+class Node {
+    constructor(data){
+        this.data = data
+        // this.child = [] // 2진트리가 아닌 트리를 만들 때 사용할 수 있습니다.
+        this.left = null
+        this.right = null
+    }
+}
+
+class Tree {
+    constructor(data){
+        let init = new Node(data)
+        this.root = init
+        this.length = 0
+    }
+
+    // length(){ // this.length와 이름이 같아서 작동하지 않습니다.
+    //     return this.length
+    // }
+
+    insert(data){
+        let 새로운노드 = new Node(data)
+        let 순회용현재노드 = this.root
+
+        while(순회용현재노드){
+            if(data == 순회용현재노드.data){
+                // 들어온 값이 존재하는 값이면 트리에 값을 추가하지 않습니다.
+                return
+            } else if (data < 순회용현재노드.data){
+                // 들어온 데이터가 작은 경우 왼쪽에 붙여야 합니다!
+                // 해당 데이터 부분이 비어있으면 데이터를 넣고, 비어있지 않으면 계속 타고 내려가야 합니다.
+                if(!순회용현재노드.left){
+                    순회용현재노드.left = 새로운노드
+                    this.데이터수 += 1
+                    return
+                }
+                순회용현재노드 = 순회용현재노드.left
+            } else if (data > 순회용현재노드.data){
+                // 들어온 데이터가 큰 경우 오른쪽에 붙여야 합니다!
+                // 해당 데이터 부분이 비어있으면 데이터를 넣고, 비어있지 않으면 계속 타고 내려가야 합니다.
+                if(!순회용현재노드.right){
+                    순회용현재노드.right = 새로운노드
+                    this.데이터수 += 1
+                    return
+                }
+                순회용현재노드 = 순회용현재노드.right
+            }
+        }
+    }
+}
+
+// 깊스너큐
+DFS(){
+    // 깊이우선탐색, DFS(Depth First Search)
+    // stack 이용
+    let 방문경로 = []
+    let 스택 = [this.root]
+
+    while(스택.length !== 0 ){
+        let current = 스택.pop()
+        if(current.right){
+            스택.push(current.right)
+        }
+        if(current.left){
+            스택.push(current.right)
+        }
+        방문경로.push(current.data)
+    }
+    return 방문경로
+}
+
+BFS(){
+        // 너비우선탐색, BFS(Breadth First Search)
+        // Queue 이용!
+        let 방문경로 = []
+        let 큐 = [this.root]
+
+        while(큐.length !== 0){
+            let current = 큐.shift()
+            if (current.right){
+                큐.push(current.right)
+            }
+            if (current.left){
+                큐.push(current.left)
+            }
+            방문경로.push(current.data)
+        }
+
+        return 방문경로
+    }
+
+    let test = [
+        'A 10 !',
+        'B 20 !',
+        'A 22',
+        'B 20 @',
+        'A 21 @'
+    ]
+
+    test.forEach(s=>soncols.log(s));
+    test.forEach(s=)
