@@ -1,0 +1,284 @@
+@charset 'utf-8';
+
+:root{
+    --main-color: #eae8fe;
+    --white-color: #fff;
+    --point-color: #6327fe; 
+    --gray:#BDBDBD;
+}
+/* 유틸리티 스타일 */
+.ir{
+    position: absolute;
+    clip-path : inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.img-item{
+    display: block;
+    /*  베이스라인때문에 설정해줌. 의도치않게 공백이 생길수도 */
+}
+
+/* 레이아웃 */
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body{
+    background-color: var(--main-color);
+    
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 28px;
+    padding-top: 247px;
+
+}
+
+#app .tit-app{
+    position: absolute;
+    width: 386px;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    /* 가운데로 오게끔 */
+    font-weight: 500;
+}
+#app .vending-machine{
+    background-color: var(--white-color);
+}
+
+#app .vending-machine,
+#app .my-info{
+    flex-basis: 360px;
+    /* 넓이 기본값주는방법 */
+}
+#app .tit-app .img-item{
+    width: 100%;
+
+}
+/* 자판기스타일*/
+#app .vending-machine{
+    padding:31px 27px 28px;
+}
+
+.vending-machine .list-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:12px;
+}
+.vending-machine .list-item li{
+    position: relative;
+    /* 품절표시 주기 위해서 relative */
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+
+}
+
+.vending-machine .list-item li.sold-out::before{
+    display: block;
+    position: absolute;
+    content : '';
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 10px;
+    background: no-repeat center/60px 46px url(../images/Sold-out.png) rgba(0,0,0,0.8);
+    
+}
+.vending-machine .list-item li.sold-out{
+    pointer-events: none;
+    /* 클릭할 수 없게 만듦 */
+}
+
+.vending-machine .btn-item{
+    width: 100%;
+    padding:11px 12px 9px;
+    font-weight: 500;
+
+}
+
+.vending-machine .btn-item:active{
+    border-radius: 10px;
+    outline: 3px solid var(--point-color);
+}
+
+.vending-machine .list-item .img-item{
+    width: 36px;
+    height: 65px;
+    margin: 0 auto;
+}
+.vending-machine .list-item .tit-item{
+    display: block;
+    /* inline 요소는 상하마진 못주기때문 */
+    margin: 6px 0 7px 0;
+    font-size: 9px;
+
+}
+
+.vending-machine .txt-price{
+    display: block;
+    padding: 5px 15px;
+    font-size: 12px;
+    background-color: var(--point-color);
+    border-radius: 50px;
+    color: var(--white-color);
+}
+
+/* 잔액,입금,획득 스타일 */
+
+.vending-machine .cont-buy{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cont-buy .info-balance,
+.cont-buy .inp-put,
+.cont-buy .list-item-staged{
+    grid-column: 1/3;
+    border-radius: 5px;
+} 
+.cont-buy .btn-return,
+.cont-buy .btn-put,
+.cont-buy .btn-get {
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+    font-size: 13px;
+}
+.cont-buy .btn-get {
+    background-color: var(--point-color);
+    color:var(--white-color);
+}
+.cont-buy .info-balance{
+    padding: 6px 10px;
+    background-color: var(--main-color);
+}
+.cont-buy .info-balance .txt-balance{
+    float: right;
+}
+.cont-buy .inp-put{
+    padding: 6px;
+    border: 1px solid var(--gray);
+}
+
+/* 높이 설정 안해주지만 장바구니 부분은 스크롤때문에 높이값 설정해줘야한다 */
+.list-item-staged{
+    height: 106px;
+    padding: 12px;
+    overflow-y: scroll;
+    background-color: var(--main-color);    
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+}
+
+.list-item-staged li{
+    border-radius: 5px;
+    background-color: var(--white-color);
+}
+/* li에 패딩 안주는 이유: 누를 수 있는 영역은 최대한 넒어야 사용자가 편함 */
+
+.list-item-staged li + li{
+    margin-top: 6px;
+    /* 앞에 LI 있을 경우에만 6px */
+}
+.list-item-staged .img-item,
+.list-item-staged .txt-item{
+    float: left;
+}
+.list-item-staged .txt-item{
+    margin-left: 10px;
+    line-height: 32px;
+    font-weight: 500;
+    font-size: 9px;
+}
+
+.list-item-staged .btn-staged{
+    width: 100%;
+    padding:8px;
+}
+.list-item-staged .num-counter{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--gray);
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.list-item-staged .img-item{
+    width: 18px;
+    height: 32px;
+}
+
+/* 나의 정보 스타일 */
+.my-info .cont-mymoney {
+    padding: 9px 27px;
+    margin-bottom: 20px; 
+    background-color: var(--white-color);   
+}
+
+.my-info .info-mymoney{
+    padding:6px 10px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    line-height: 20px;
+}
+.info-mymoney .txt-mymoney{
+    float:right;
+    font-weight: 700;
+}
+.my-info .cont-myitems{
+    padding: 25px 27px 26px;
+    background-color: var(--white-color);
+}
+.cont-myitems .tit-myitem {
+    display: block;
+    text-align: center;   
+    font-weight: 700;
+    margin-bottom: 13px; 
+    line-height: 20px;
+}
+.my-info .list-item-staged{
+    height: 364px;
+}
+.my-info .list-item-staged li{
+    overflow: hidden;
+    padding: 8px;
+}
+.my-info .txt-total{
+    display: block;
+    text-align: right;
+    margin-top: 6px;
+    line-height: 17px;
+    font-size: 12px;
+}
+
+@media only screen and (min-width:320px)and(max-width:480px) and (-webkit-min-device-pixel-ratio:2){
+    /* 예전 브라우저 지원 */
+    /* 1px당 두개화소이상의 경우일때만 (레티나) */
+    body{
+        background-color: var(--white-color);
+    }
+
+    #app{
+        padding-top: 96px;
+    }
+
+    #app .tit-app{
+        width: 166px;
+    
+    }
+}
+
+
