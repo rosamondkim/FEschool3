@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+        <h1>hello world</h1>
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            function f() {
+                return 100;
+            }
+
+            function 게시판() {
+                return <h2>게시판</h2>;
+            }
+
+            function 로그인() {
+                return <h2>로그인</h2>;
+            }
+
+            const login = true;
+
+            const app = (
+                <div>
+                    {f()}
+                    {console.log("hello")}
+                    {1 + 1}
+                    {"hello" + "world"}
+                    {"<br/>"}
+                    <br />
+                    {"hello" + "world2"}
+                    {true ? "one" : "two"}
+                    {login ? <게시판 /> : <로그인 />}
+                </div>
+            );
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>
