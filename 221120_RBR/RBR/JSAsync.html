@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+
+<body>
+    <script async src="test2_1.js"></script>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto distinctio laudantium, possimus, provident
+        tenetur voluptate voluptatem, asperiores ipsam eum maxime tempora dolorem sequi exercitationem velit cupiditate
+        expedita! Aspernatur, cumque magni?</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, eos temporibus suscipit corporis quisquam
+        perferendis minus aliquid beatae commodi! Consequuntur harum adipisci nulla voluptatibus nobis unde ad
+        voluptatem repellendus est?</h2>
+
+    <!-- 2. Async : 브라우저가 돔파싱을 하는 중간에 JS파일을 만나더라도 돔파싱을 계속하면서 동시에 JS파일을 해석하도록 합니다. 단, JS를 로딩하고 해석할 때와는 다르게, JS파일을 실행할 때는 돔파싱이 중단됩니다.  
+    
+    Async 스크립트는 load 이벤트가 실행되기 전까지 자유로운 시점에 실행됩니다.  때문에 스크립트가 실행되는 시점을 통제할 수는 없으며, 여러개의 async 스크립트가 있다면 실행되는 순서도 제각각 다릅니다. 브라우저가 판단하여 스크립트의 실행이 필요할 때 자동으로 실행합니다.  
+    -->
+
+    <!-- 다운로드 -> 해석 -> 실행  -->
+    <script>
+        console.log('first inline script');
+    </script>
+    <script async src="test1.js"></script>
+    <script>
+        console.log('second inline script');
+    </script>
+
+    <script>
+        console.log('third inline script');
+    </script>
+    <!-- 57.3 ~ 55 ~ 51.8 -->
+</body>
+
+</html>
