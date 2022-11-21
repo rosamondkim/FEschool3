@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Fascinate&family=Kdam+Thmor+Pro&family=Noto+Sans+KR:wght@300&family=Open+Sans&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <input type="text">
+    <input 
+    type="button" 
+    value="누르세요" 
+    onclick=""
+    >
+    <input 
+    type="button" 
+    value="circle" 
+    onclick=""
+    >
+    <input 
+    type="button" 
+    value="Rounded" 
+    onclick=""
+    >
+    <input 
+    type="button" 
+    value="Rect" 
+    onclick=""
+    >
+    <br>
+    <div class="container">
+        <div id="item1" class="item"></div>
+        <div id="item2" class="item"></div>
+        <div id="item3" class="item"></div>
+        <div id="item4" class="item"></div>
+        <div id="item5" class="item"></div>
+        <div id="item6" class="item"></div>
+    </div>
+    <script>
+        const store = Redux.createStore(reducer)
+        function reducer(state,action){
+            console.log(state,action)
+            if(state === undefined)
+            return{
+                text: "hello",
+                color: "black",
+                border:'5px solid black',
+                borderRadius: '0px'
+            }
+        }
+    </script>
+</body>
+</html>
