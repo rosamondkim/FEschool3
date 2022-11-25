@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <div id="root">
+        <section class="email-pw">
+            <h2 class="main-title">이메일로 회원가입</h2>
+            <div class="input-container">
+                <label for="emailInput">이메일</label>
+                <input type="email" id="emailInput" name="email" data-state="0" placeholder="이메일 주소를 알려주세요.">
+            </div>
+            <div class="input-container input-container-pw">
+                <label for="passwordInput">비밀번호</label>
+                <input type="password" name="password" id="passwordInput" data-state="0" placeholder="비밀번호를 설정해 주세요.">
+            </div>
+            <button type="button" class="next-btn">다음</button>
+        </section>
+
+        <section class="profile">
+            <h2 class="main-title join-profile-title">프로필 설정</h2>
+            <p class="profile-info-txt">나중에 언제든지 변경할 수 있습니다.</p>
+            <label for="profileImg">
+                <img src="https://mandarin.api.weniv.co.kr/Ellipse.png" alt="" srcset="" id="imagePre">
+            </label>
+            <input type="file" id="profileImg" name="image" accept="image/*" class="ir" />
+            <div class="input-container">
+                <label for="userNameInput">사용자 이름</label>
+                <input type="text" id="userNameInput" name="username" data-state="0" placeholder="2~10자 이내여야 합니다.">
+            </div>
+            <div class="input-container">
+                <label for="userIdInput">계정 ID</label>
+                <input type="text" id="userIdInput" name="accountname" data-state="0" placeholder="영문, 숫자, 특수문자(,), (_)만 사용 가능합니다.">
+            </div>
+            <div class="input-container input-container-intro">
+                <label for="userIntroInput">소개</label>
+                <input type="text" id="userIntroInput" name="intro" data-state="1" placeholder="자신과 판매할 상품에 대해 소개해 주세요.">
+            </div>
+            <button type="button" class="submit-btn">감귤마켓 시작하기</button>
+        </section>
+    </div>
+</body>
+<script>
+const submitBtn = document.querySelector(".submit-btn");
+const onClick = async () => {
+    const inputs = document.querySelectorAll("#root input");
+    // 데이터 만들기
+    const data = [...inputs].reduce((data,inputEl)=>{
+        if(inputEl.name == "profile-img"){
+            return data;
+        }
+        data[inputEl.name] = inputEl.value;
+        return data
+    },{})
+    // 데이터에 이미지 추가하기
+    const imagePre = document.querySelector("#imagePre");
+    data["image"] = imagePre.src;
+    
+    // 회원가입 요청 api 명세맞춰서 데이터 가공하기!
+    const userData = {user:data}
+    const res = await fetch("http://146.56.183.55:5050/user",{
+        method:"POST",
+        headers:{
+            "Content-type" : "application/json"
+        },
+        body:JSON.stringify(userData)
+    });
+
+    const json = await res.json()
+    console.log(json)
+}
+
+
+//이미지 업로드 함수 만들기
+// 아직 회원가입할때 이미지를 만들수가 없어요 ㅠㅠ
+// 1. file이 change 되었을때 바뀐 파일을 업로드하고 반환된 주소를 이용하자.
+// 2. 회원가입 요청시 file을업로드하자! 그리고 반환받은 주소를 이용하자.
+// 1번이 더 쉽다는데? 1번으로 ㄱ
+const fileOnChange = async (e) =>{
+    // 파일 하나 꺼내오기
+    const imageFile = e.target.files[0];
+    // 폼데이터 만들기
+    const formData = new FormData();
+    // 폼데이터에 내 데이터 추가하기
+    // 폼데이터.append("키","값")
+    formData.append("image",imageFile);
+    // 요청하기
+    const res = await fetch("http://146.56.183.55:5050/image/uploadfile",{
+        method:"POST",
+        body:formData
+    });
+    // json꺼내기
+    const json = await res.json()
+    // 이미지 미리보기 요소선택
+    const imagePre = document.querySelector("#imagePre");
+    // 이미지 미리보기 요소에 src변경
+    imagePre.src = "http://146.56.183.55:5050/"+json.filename;
+
+}
+const imgInput = document.querySelector("#profileImg");
+imgInput.addEventListener("change",fileOnChange);
+
+const imageUpload = ()=>{
+
+}
+
+
+
+
+// 이벤트 등록하기
+submitBtn.addEventListener("click",onClick);
+
+</script>
+</html>
