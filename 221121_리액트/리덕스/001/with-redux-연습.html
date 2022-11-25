@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    </head>
+
+    <body>
+        <style>
+            div {
+                border: 5px solid black;
+                padding: 10px;
+                width: 100px;
+                height: 200px;
+                display: inline-block;
+            }
+        </style>
+
+        <button>사각형</button>
+        <button>둥근사각형</button>
+        <button>원</button>
+
+        <br /><br /><br />
+
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+
+        <script>
+            function reducer (state,action){
+                if(state == undefined){
+                    
+                } else {
+
+                }
+            }
+            
+            // Redux는 cdn으로 생깁니다.
+            var store = Redux.createStore(
+                reducer,
+                window.__REDUX_DEVTOOLS_EXTENSION__ &&
+                    window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools를 사용하기 위한 코드
+            );
+        </script>
+    </body>
+</html>

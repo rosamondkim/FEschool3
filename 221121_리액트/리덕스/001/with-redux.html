@@ -16,6 +16,9 @@
     <div id="blue"></div>
     <div id="green"></div>
     <script>
+        // 1. 새로운 
+        // 2, 새로운 컴포넌트 안에서만 코딩하면 된다.
+
         // state는 현재 상태, action은 주문 받은 것! 
         function reducer(state, action) {
             console.log(state, action);
@@ -27,7 +30,9 @@
                 //복제해야 합니다. 그냥 {color:'red'}이런 식으로 리턴해줘도 되긴 하는데 리덕스의 고급기능을 쓰지 못합니다.
                 // Object.assign({}, 빈객체에 복제할 값1, 빈객체에 복제할 값2...);
                 console.log(state)
-                newState = Object.assign({}, state, { color: action.color });
+                newState = {...state, color:action.color}
+                // 그 액션의 컬러로 state값 변경해주겠다
+
             }
             return newState;
         }
@@ -80,6 +85,39 @@
         }
         store.subscribe(green);
         green();
+        function pink() {
+            var state = store.getState();
+            //type은 반드시 있어야 합니다.
+            // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+            document.querySelector('#pink').innerHTML = `
+                <div class="container" id="component_pink" style="background-color:${state.color}">
+                        <h1>pink</h1>
+                        <input type="button" value="fire" onclick="
+                            store.dispatch({type:'CHANGE_COLOR', color:'pink'});
+                        ">
+                </div>
+            `;
+        }
+        // 값이 바뀔 때마다 pink 함수를 호출
+        store.subscribe(pink);
+        pink();
+
+        function grey() {
+            var state = store.getState();
+            //type은 반드시 있어야 합니다.
+            // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+            document.querySelector('#grey').innerHTML = `
+                <div class="container" id="component_grey" style="background-color:${state.color}">
+                        <h1>grey</h1>
+                        <input type="button" value="fire" onclick="
+                            store.dispatch({type:'CHANGE_COLOR', color:'grey'});
+                        ">
+                </div>
+            `;
+        }
+        // 값이 바뀔 때마다 grey 함수를 호출
+        store.subscribe(grey);
+        grey();
 
     </script>
 </body>
