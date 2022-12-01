@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="pw">비밀번호 : </label>
+        <input type="password" id="pw" pattern="(?=.*[!@#$%^&*()_+=-])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}"
+            required>
+
+        <label for="pwConfirm">비밀번호 확인: </label>
+        <input type="password" id="pwConfirm" required>
+
+        <button>제출</button>
+    </form>
+
+    <script>
+        const pw = document.querySelector('#pw');
+        const btnSubmit = document.querySelector('button');
+        const inps = document.querySelectorAll('input');
+
+        btnSubmit.addEventListener('click', () => {
+            inps.forEach(item => {
+                validate(item);
+            });
+        })
+
+        /**
+         * 1. input에 아무것도 입력하지 않았거나
+         * 2. 비밀번호 input과 비밀번호 확인 input의 값이 동일하지 않거나,
+         * 3. 비밀번호의 패턴이 정규표현식과 일치하지 않은 경우
+        */
+        function validate(target) {
+            // 
+            if (target.validity.valueMissing) {
+                target.setCustomValidity('값을 입력해주세요');
+            } else if (target.id === "pwConfirm") {
+                if (target.value !== pw.value) {
+                    target.setCustomValidity('동일한 비밀번호를 입력해주세요');
+                } else {
+                    target.setCustomValidity('');
+                }
+            } else if (target.validity.patternMismatch) {
+                target.setCustomValidity('대문자나 특수기호릏 하나 이상 포함하는 비밀번호를 8글자 이상 넣어주세요');
+            } else {
+                target.setCustomValidity('');
+            }
+        }
+    </script>
+</body>
+
+</html>

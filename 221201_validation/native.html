@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        /* 해당속성을 required가 없는 input과 시각적인 구분을 가능하게 합니다. */
+        input:required {
+            border: 5px solid green;
+        }
+
+        /* 올바르지 않은 입력이 이루어진 input을 선택합니다. */
+        input:invalid {
+            border: 5px solid red;
+        }
+
+        /* 올바른 입력이 이루어졌을 때 input을 선택합니다. */
+        input:valid {
+            border: 5px solid blue;
+        }
+
+        input:required:invalid {
+            border: 5px solid teal;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- minlength="" maxlength="" : 데이터의 길이를 제한합니다. -->
+    <!-- number, email, text, password, url ...  -->
+    <!-- min="" max="" : 숫자의 크기를 제한합니다. -->
+    <form action="">
+        <label for="stuff">원하는 수량을 입력하세요 (최소 3개 이상)</label>
+        <input type="number" min="3" id="stuff">
+
+        <label for="email">이메일을 입력하세요</label>
+        <input type="email" id="email" required minlength="20">
+
+        <input type="text" required>
+        <button>제출</button>
+    </form>
+</body>
+
+</html>
