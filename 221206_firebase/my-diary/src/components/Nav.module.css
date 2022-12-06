@@ -1,0 +1,19 @@
+.nav {
+    background-color: royalblue;
+    padding: 20px 50px;
+}
+
+.list_nav {
+    display: flex;
+    justify-content: right;
+    gap: 16px;
+}
+
+.tit {
+    color: white;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}

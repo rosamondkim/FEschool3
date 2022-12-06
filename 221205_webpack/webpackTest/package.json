@@ -1,0 +1,22 @@
+{
+  "name": "webpacktest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test2": "echo \"Error: 그냥 만들어 봤습니다.\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "~17.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
