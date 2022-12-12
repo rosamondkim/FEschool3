@@ -1,0 +1,36 @@
+.login_form {
+    max-width: 360px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.login_form legend {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+.login_form label {
+    display: block;
+    margin: 30px 0;
+}
+
+.login_form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 6px;
+    color: #777;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.login_form .btn {
+    margin-top: 40px;
+    float: right;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background-color: teal;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
